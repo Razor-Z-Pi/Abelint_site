@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+
+    color: black;
+}
+
+h1 {
+    text-transform: uppercase;
+
+    font-size: 46px;
+}
+
+/*Шапка сайта*/
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 100px;
+    background-image: url("../image/title.jpg");
+}
+
+.logo_img {
+    height: 80px;
+    width: 150px;
+}
+
+.navigation {
+    width: 800px;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*Секция с контетом*/
+
+.content {
+    width: 100%;
+}
+
+.title_Abelint {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    height: 820px;
+
+    background-image: url("../image/title.jpg");
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-size: cover;
+
+    text-align: center;
+}
+
+.title_Abelint ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 20px;
+}
+
+.li_title {
+    margin: 1px;
+}
+
+.box_abelint {
+    margin-top: 10%;
+}
