@@ -1,2 +1,3 @@
 # Abelint_site
-Website for Abelint
+Website for Abelint 
+Developed on technology [html, css, javascript]
