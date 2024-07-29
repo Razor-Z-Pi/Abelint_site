@@ -12,14 +12,22 @@
 
   <body>
     <section class="container">
-      <header class="header">
+      
+      <div class="preloader">
+        <div class="preloader__row">
+          <div class="preloader__item"></div>
+          <div class="preloader__item"></div>
+        </div>
+      </div>
+
+      <header class="header block">
         <div class="logo">
           <a href=""><img class="logo_img" src="./image/abelint-fone.png" alt=""></a>
         </div>
 
         <nav class="navigation">
           <ul>
-            <li class="point-navigate"><a style="font-weight: 700;" href="">Проект AR-гид по историческим местам Хакасии</a></li>
+            <li class="point-navigate"><a class="pulsate" style="font-weight: 700;" href="">Проект AR-гид по историческим местам Хакасии</a></li>
             <li class="point-navigate"><a href="">Документы</a></li>
             <li class="point-navigate"><a href="">3D модели</a></li>
             <li class="point-navigate"><a href="">Хакатон 2022</a></li>
@@ -28,7 +36,7 @@
       </header>
 
       <section class="content">
-        <div class="title_Abelint">
+        <div class="title_Abelint block">
           <div class="box_abelint">
             <h1>АНО «АБЕЛИНТ»</h1>
             <ul style="font-weight: 700;">
@@ -41,7 +49,7 @@
           </div>                                   
         </div>
 
-        <div class="info">
+        <div class="info block">
           <div class="box-info">
             <img class="image_info" src="./image/1.png" alt="Безопасно">
             <h2 class="title_info">У нас безопасно</h2>
@@ -62,42 +70,134 @@
         </div>
 
         <div class="tech">
-           <div class="container_content">
-            <img class="location_image" src="./image/photo.jpg" alt="Мероприятия">
+           <div class="container_content block">
+            <div class="container_image_text">
+              <img class="location_image" src="./image/photo.jpg" alt="Мероприятия">
+              <div class="middle">
+                <p>
+                  Организуем и участвуем в организации мероприятий технической направленности
+                </p>
+              </div>
+            </div>
+            
             <div class="box_content">
               <h2>Мероприятия</h2>
-              <p>
-                Организуем и участвуем в организации мероприятий технической направленности
-              </p>
             </div>
            </div>
 
-           <div class="container_content">
+           <div class="container_content block">
             <div class="box_content">
               <h2>3D моделирование</h2>
               <p>
                 Создание 3D моделей различных объектов. Среди которых объекты, имеющие историческое значение
               </p>
             </div>
-            <img class="location_image" src="https://media.sketchfab.com/models/6c33e5f3b4e0446baac7efd8cab13210/thumbnails/22f94509a12a4ed7b96ff5a4e1a142f9/a8be0a4b6714475f908bf56448058f4d.jpeg" alt="Мероприятия">
-           </div>
-
-           <div class="container_content">
-            <img class="location_image" src="" alt="Мероприятия">
-            <div class="box_content">
-              <h2>Интернет Вещей IoT</h2>
-              <p>
-                Создаем устройства на микропроцессорной технике и работающей через сеть интернет
+            <div class="sketchfab-embed-wrapper" style="text-align: center;"> 
+              <iframe style="width: 600px; height: 500px; border-radius: 50px;" title="3ds Model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6c33e5f3b4e0446baac7efd8cab13210/embed"></iframe> 
+              <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/3ds-model-6c33e5f3b4e0446baac7efd8cab13210?utm_medium=embed&utm_campaign=share-popup&utm_content=6c33e5f3b4e0446baac7efd8cab13210" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> 3ds Model </a> by <a href="https://sketchfab.com/geakvantum19?utm_medium=embed&utm_campaign=share-popup&utm_content=6c33e5f3b4e0446baac7efd8cab13210" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Abelint </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=6c33e5f3b4e0446baac7efd8cab13210" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
               </p>
+            </div>           
+          </div>
+
+           <div class="container_content block">
+            <div class="container_image_text">
+              <img class="location_image" style="height: 500px;" src="./image/iot.png" alt="Технологии IoT">
+              <div class="middle">
+                <p>
+                  Создаем устройства на микропроцессорной технике и работающей через сеть интернет
+                </p>
+              </div>
+            </div>
+
+            <div class="box_content">
+              <h2>Технологии IoT</h2>
             </div>
            </div>
         </div>
+
+        <div class="command block">
+          <div class="children">
+            <img src="./image/people/Денис.jpg" alt="" class="people">
+            <p>
+              Заместитель директора ХТИ – филиала СФУ. Организатор
+            </p>
+            <p>
+              Шпигальский Денис
+            </p>
+          </div>
+
+          <div class="children">
+            <img src="./image/people/Илья.jpg" alt="" class="people">
+            <p>
+              Директор АНО “Абелинт”. Курирование проектов, создание IoT устройств, разработка ПО
+            </p>
+            <p>
+              Курбатов Илья
+            </p>
+          </div>
+
+          <div class="children">
+            <img src="./image/people/Денис-Береженко-edited.png" alt="" class="people">
+            <p>
+              3D-моделист и разработчик ПО
+            </p>
+            <p>
+              Береженко Денис
+            </p>
+          </div>
+
+          <div class="children">
+            <img src="./image/people/Виктория-1-150x150.jpg" alt="" class="people">
+            <p>
+              Дизайнер, активист, организатор
+            </p>
+            <p>
+              Алахтаева Виктория
+            </p>
+          </div>
+
+          <div class="children">
+            <img src="./image/people/Полина-edited.jpg" alt="" class="people">
+            <p>
+              Продвижение в соц. сетях. Медиа-проекты.
+            </p>
+            <p>
+              Спирина Полина
+            </p>
+          </div>
+
+          <div class="children">
+            <img src="./image/people/Екатерина-edited.jpeg" alt="" class="people">
+            <p>
+              Курирование проектов. Организатор
+            </p>
+            <p>
+              Курбатова Екатерина
+            </p>
+          </div>
+        </div>
       </section>
 
-      <footer class="footer">
-
+      <footer class="footer block">
+        <h2>
+          Приглашаем поддержать проект «Сохранения культурно-исторических памятников Минусинской котловины»
+        </h2>
+        <p>
+          с помощью создания приложения с дополненной реальностью AR-гид
+        </p>
+        <nav class="footer_navigation">
+          <ul>
+            <li><a href=""><img class="logo_img" src="./image/abelint-fone.png" alt=""></a></li>
+            <li>© 2024 АНО «АБЕЛИНТ». Все права защищены.</li>
+            <li class="point-navigate"><a href="#" id="point_start">В начало</a></li>
+          </ul>
+        </nav>
       </footer>
     </section>
+
+    <script src="./js/loader.js"></script>
+    <script src="./js/loaded-script-block.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/scroll-script.js"></script>
   </body>
 </html>
