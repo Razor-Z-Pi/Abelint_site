@@ -39,6 +39,12 @@ canvas {
     display: block;
 }
 
+iframe {
+    width: 600px; 
+    height: 500px; 
+    border-radius: 50px;
+}
+
 .container {
     background-image: url("../image/title.jpg");
     background-attachment: fixed;
@@ -80,6 +86,8 @@ canvas {
 /*Шапка сайта*/
 
 .header {
+    position: relative;
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -89,12 +97,43 @@ canvas {
     background-image: url("../image/title.jpg");
 }
 
+.logo {
+    transition: all 0.2s ease-in-out;
+}
+
+.logo:hover {
+    animation: swing 1s ease;
+    animation-iteration-count: 1;
+}
+
+@keyframes swing {
+    15% {
+    transform: translateX(5px);
+    }
+    30% {
+    transform: translateX(-5px);
+    }
+    50% {
+    transform: translateX(3px);
+    }
+    65% {
+    transform: translateX(-3px);
+    }
+    80% {
+    transform: translateX(2px);
+    }
+    100% {
+    transform: translateX(0);
+    }
+}
+
 .logo_img {
     height: 80px;
     width: 150px;
 }
 
 .navigation {
+    display: block;
     width: 800px;
 }
 
@@ -119,6 +158,7 @@ canvas {
     height: 2px;
     background-color: rgb(231, 222, 135);
     content: "";
+    z-index: 4;
     transition: width 0.5s ease-in;
 }
 
@@ -162,12 +202,12 @@ canvas {
     width: 100%;
     height: 4px;
     border-radius: 10px;
-    background: #000;
+    background: rgb(179, 163, 23);
 }
 
 .burger::before {
     top: 0;
-    box-shadow: 0 11px 0 #000;
+    box-shadow: 0 11px 0 black;
     transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
 }
 
@@ -179,7 +219,7 @@ canvas {
 .burger-checkbox:checked + .burger::before {
     top: 11px;
     transform: rotate(45deg);
-    box-shadow: 0 6px 0 rgba(0,0,0,0);
+    box-shadow: 0 6px 0 rgba(255, 249, 249, 0);
     transition: box-shadow .15s, top .3s, transform .3s .15s;
 }
 
@@ -190,7 +230,11 @@ canvas {
 }
 
 .navigation-mobile {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    content: "";
 
     display: flex;
     flex-direction: column;
@@ -198,10 +242,32 @@ canvas {
     align-items: center;
 
     width: 100%;
-    height: 400px;
+    height: 500px;
     background-color: rgba(0, 0, 0, 0.8);
 
     text-align: center;
+}
+
+.navigation-mobile ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-mobile li {
+    margin-bottom: 30px;
+}
+
+.navigation-mobile a {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .container_hidden {
@@ -257,6 +323,8 @@ canvas {
 
 .box_abelint {
     margin-top: 10%;
+
+    visibility: visible;
 }
 
 .info {
@@ -388,14 +456,13 @@ canvas {
     color: white;
 
     text-align: center;
-
-    margin-top: 100px;
 }
 
 .footer h2 {
     font-size: 40px;
 
     padding-top: 50px;
+    margin: 0;
 }
 
 .footer p {
@@ -492,11 +559,68 @@ canvas {
     display: none;
 }
 
+.box_abelint ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.waves {
+    position:relative;
+
+    width: 100%;
+    height: 15vh;
+
+    
+    margin-top: 100px;
+    margin-bottom: -7px; /*Fix for safari gap*/
+
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+}
+
 /*Адапатив*/
 
 @media (max-width: 1000px) {
     canvas {
         display: none;
+    }
+
+    .header {
+        justify-content: start;
     }
 
     .navigation {
@@ -505,5 +629,38 @@ canvas {
 
     .burger_container {
         display: block;
+
+        position: absolute;
+        top: 0;
+        left: 90%;
+        z-index: 3;
+        content: "";
+
+    }
+
+    .title_Abelint {
+        display: block;
+    }
+}
+
+@media (max-width: 620px) {
+    iframe {
+        width: 100%;
+    }
+
+    .box_content h2 {
+        font-size: 20px;
+    }
+
+    .location_image {
+        width: 100%;
+    }
+
+    .children p {
+        width: 100%;
+    }
+
+    .footer_navigation ul li {
+        margin: 10px;
     }
 }

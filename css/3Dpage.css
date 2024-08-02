@@ -107,6 +107,36 @@ h1::before {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+.logo {
+    transition: all 0.2s ease-in-out;
+}
+
+.logo:hover {
+    animation: swing 1s ease;
+    animation-iteration-count: 1;
+}
+
+@keyframes swing {
+    15% {
+    transform: translateX(5px);
+    }
+    30% {
+    transform: translateX(-5px);
+    }
+    50% {
+    transform: translateX(3px);
+    }
+    65% {
+    transform: translateX(-3px);
+    }
+    80% {
+    transform: translateX(2px);
+    }
+    100% {
+    transform: translateX(0);
+    }
+}
+
 .logo_img {
     height: 80px;
     width: 150px;
@@ -145,6 +175,113 @@ h1::before {
 .point-navigate a:hover::after,
 .point-navigate a:focus::after {
     width: 100% /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/;
+}
+
+/*Бургер для навигации*/
+
+.burger_container {
+    display: none;
+}
+
+.burger-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.burger {
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    border: none;
+    background: transparent;
+
+    width: 40px;
+    height: 26px;
+
+    margin: 30px auto;
+}
+
+.burger::before,
+.burger::after {
+    position: absolute;
+    display: block;
+
+    content: '';
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: rgb(179, 163, 23);
+}
+
+.burger::before {
+    top: 0;
+    box-shadow: 0 11px 0 black;
+    transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+}
+
+.burger::after {
+    bottom: 0;
+    transition: bottom .3s .15s, transform .3s;
+}
+
+.burger-checkbox:checked + .burger::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 rgba(255, 249, 249, 0);
+    transition: box-shadow .15s, top .3s, transform .3s .15s;
+}
+
+.burger-checkbox:checked + .burger::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition: bottom .3s, transform .3s .15s;
+}
+
+.navigation-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    content: "";
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    text-align: center;
+}
+
+.navigation-mobile ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-mobile li {
+    margin-bottom: 30px;
+}
+
+.navigation-mobile a {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.container_hidden {
+    display: none;
 }
 
 /* Секция с контентом*/
@@ -317,4 +454,44 @@ h1::before {
   
 .loaded .preloader {
     display: none;
+}
+
+/*Адапатив*/
+
+@media (max-width: 1000px) {
+
+    .header {
+        justify-content: start;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .burger_container {
+        display: block;
+
+        position: absolute;
+        top: 0;
+        left: 90%;
+        z-index: 3;
+        content: "";
+
+    }
+
+    .content {
+        margin-top: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    iframe {
+        width: 100%;
+    }
+
+    .avtor_сitation{
+        width: 100%;
+    }
+
 }

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("asdasd");
     let blocks = document.querySelectorAll(".block");
 
     function checkBlocksVisibility() {
