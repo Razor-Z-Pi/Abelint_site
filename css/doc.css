@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+
+    color: black;
+}
+
+h1 {
+    position: relative;
+
+    text-transform: uppercase;
+
+    font-size: 46px;
+}
+
+/*Нижняя полоса*/
+h1::before {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    content: "";
+
+    border: 2px solid rgb(231, 222, 135);
+    width: 100%;
+}
+
+.container {
+    background-image: url("../image/title_dock.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-size: cover;
+
+    height: 100%;
+}
+
+.block {
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.pulsate {
+    animation: pulsate 3s ease-out;
+    animation-iteration-count: infinite; 
+    opacity: 0.5;
+}
+
+@keyframes pulsate {
+    0% { 
+        opacity: 0.5;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.5;
+    }
+}
+
+.pulsate:hover {
+    opacity: 1;
+    animation-iteration-count: unset;
+}
+
+/*Шапка сайта*/
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logo_img {
+    height: 80px;
+    width: 150px;
+}
+
+.navigation {
+    width: 800px;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.point-navigate a {
+    position: relative;
+    cursor: pointer;
+    line-height: 1;
+    
+    color: white;
+}
+
+.point-navigate a::after {
+    display: block;
+    position: absolute;
+
+    left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0; /*задаём длинну линии до наведения курсора*/
+    height: 2px;
+    background-color: rgb(231, 222, 135);
+    content: "";
+    transition: width 0.5s ease-in;
+}
+
+.point-navigate a:hover::after,
+.point-navigate a:focus::after {
+    width: 100% /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/;
+}
+
+/* Секция с контентом*/
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+}
+
+.docs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.block-docs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 550px;
+    height: 350px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+
+    margin: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.block-docs p {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.block-docs:hover,
+.block-docs:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+
+/*Прелоадер*/
+
+.preloader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #e0e0e0;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+}
+  
+.preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+}
+  
+.preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #337ab7;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+}
+  
+.preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+  
+@keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+}
+  
+@keyframes preloader-bounce {
+  
+    0%,
+    100% {
+      transform: scale(0);
+    }
+  
+    50% {
+      transform: scale(1);
+    }
+}
+  
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+  
+.loaded .preloader {
+    display: none;
+}
