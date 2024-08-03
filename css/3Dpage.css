@@ -256,6 +256,20 @@ h1::before {
     background-color: rgba(0, 0, 0, 0.8);
 
     text-align: center;
+    opacity: 1;
+
+    animation-duration: 0.8s;
+    animation-name: openSl;
+}
+
+@keyframes openSl {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
 }
 
 .navigation-mobile ul {
